@@ -1,0 +1,10 @@
+; inventory.ini.example
+;
+; Copy this to inventory.ini and fill in the IP from `terraform output instance_public_ips`
+; (or `tofu output instance_public_ips` if you're using OpenTofu, as main.tf suggests).
+
+[lab]
+rss-iacm-instance-0 ansible_host=REPLACE_WITH_PUBLIC_IP ansible_user=debian
+
+[lab:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
